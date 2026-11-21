@@ -1,109 +1,81 @@
-# 🎮 Mutiny DarkRP — TTVRecod Mentee Bot
+# TTVRecod Mentee Bot
 
-A Discord bot for managing mentees on the **Mutiny DarkRP** Garry's Mod server.  
-Built for **TTVRecod** — Made by a Sa1nt | [sa1nt.xyz](https://sa1nt.xyz)
+Discord bot for managing mentees. Handles weekly check-ins, ticket system, question forwarding, and auto-roles.
 
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| **Weekly Check-In** | Automated DMs every Monday at 8:00 AM (GMT+2) to all mentees |
-| **Mentor Reminder** | DMs TTVRecod at 3:00 AM Monday to personally check in |
-| **Opt-Out System** | Mentees can disable automated check-ins; TTVRecod gets notified |
-| **Question Forwarding** | Mentees ask questions via button/modal → forwarded to TTVRecod's DMs |
-| **DM Forwarding** | Any DM to the bot gets forwarded to TTVRecod |
-| **Ticket System** | Private support channels with auto-create, 2-hour reminder, and `/close` |
-| **Welcome DM** | Auto-roles + welcome embed on member join |
-| **Debug Mode** | `/debug` previews all bot embeds in your DMs |
+Made by a Sa1nt — [sa1nt.xyz](https://sa1nt.xyz)
 
 ---
 
-## 🚀 Quick Start (Local)
+## Features
+
+- **Weekly Check-In** — Automated DMs every Monday 8:00 AM (GMT+2)
+- **Mentor Reminder** — DMs TTVRecod at 3:00 AM Monday
+- **Opt-Out** — Mentees can disable automated check-ins; TTVRecod gets notified
+- **Question Forwarding** — Mentees ask via button/modal → forwarded to TTVRecod DMs
+- **DM Forwarding** — Any DM to the bot gets forwarded to TTVRecod
+- **Ticket System** — Private channels, 2-hour reminder, `/close`
+- **Welcome DM** — Auto-role + welcome message on join
+- **Debug** — `/debug` previews all embeds in your DMs
+
+---
+
+## Setup (Local)
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/Morning_star.git
+git clone https://github.com/pietersensamuel088-ship-it/Morning_star.git
 cd Morning_star
-
-# 2. Create your .env
 cp .env.example .env
-# Edit .env and paste your bot token
-
-# 3. Install dependencies
+# Paste your bot token in .env
 pip install -r requirements.txt
-
-# 4. Run
 python bot.py
 ```
 
----
-
-## 🐳 Docker
+## Setup (Docker)
 
 ```bash
-# Build and run
+git clone https://github.com/pietersensamuel088-ship-it/Morning_star.git
+cd Morning_star
+cp .env.example .env
+# Paste your bot token in .env
 docker compose up -d --build
-
-# View logs
-docker compose logs -f bot
-
-# Stop
-docker compose down
 ```
-
-The bot's persistent data (`data.json`) is stored in a Docker volume so it survives restarts.
 
 ---
 
-## ⚙️ Slash Commands
+## Commands
 
 | Command | Access | Description |
 |---------|--------|-------------|
-| `/debug` | TTVRecod | Preview all bot DM embeds (welcome, check-in, tickets, etc.) |
-| `/setup-tickets` | TTVRecod | Post the ticket panel embed in the current channel |
-| `/setup-checkin` | TTVRecod | Post the check-in info embed |
-| `/mentees` | TTVRecod | View mentee roster with online/check-in status |
-| `/re-enable @user` | TTVRecod | Re-enable automated check-ins for a mentee |
-| `/close` | TTVRecod / ticket owner | Close and delete the current ticket channel |
+| `/debug` | TTVRecod | Preview all bot embeds in your DMs |
+| `/setup-tickets` | TTVRecod | Post ticket panel in current channel |
+| `/setup-checkin` | TTVRecod | Post check-in info embed |
+| `/mentees` | TTVRecod | View mentee roster |
+| `/re-enable @user` | TTVRecod | Re-enable auto check-ins for a mentee |
+| `/close` | TTVRecod / ticket owner | Close current ticket channel |
 
 ---
 
-## 🔐 Required Bot Permissions
+## Bot Permissions
 
-- Manage Channels
-- Manage Roles
-- Send Messages
-- Embed Links
-- Read Message History
-- Use Application Commands
+- Manage Channels, Manage Roles, Send Messages, Embed Links, Read Message History, Use Application Commands
 
-### Privileged Intents (Developer Portal)
-- ✅ Server Members Intent
-- ✅ Message Content Intent
+**Privileged Intents:** Server Members, Message Content
 
 ---
 
-## 📁 Project Structure
+## Files
 
 ```
 Morning_star/
-├── bot.py              # Main bot code
-├── .env                # Bot token (secret — never commit)
-├── .env.example        # Template for .env
-├── .gitignore          # Keeps secrets out of Git
-├── requirements.txt    # Python dependencies
-├── Dockerfile          # Container image definition
-├── docker-compose.yml  # Docker Compose config
-└── README.md           # This file
+├── bot.py
+├── .env              # Token (never commit)
+├── .env.example
+├── .gitignore
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
 ```
-
----
-
-## 📄 License
-
-MIT — do whatever you want with it.
 
 ---
 

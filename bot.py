@@ -1,5 +1,5 @@
 """
-Mutiny DarkRP — TTVRecod Mentee Bot
+TTVRecod Mentee Bot
 Made by a Sa1nt | https://sa1nt.xyz
 
 Features:
@@ -73,22 +73,19 @@ async def get_mentor() -> discord.User | None:
 
 def build_welcome_embed(member_name: str = "NewMentee", guild_icon_url: str | None = None) -> discord.Embed:
     embed = discord.Embed(
-        title="👋 Welcome to TTVRecod's Mentee Hub!",
+        title="👋 Welcome!",
         description=(
-            f"Hey there! Welcome to **TTVRecod's Mentee Server** for **Mutiny DarkRP**! 🎮\n\n"
-            "This is your space to learn, ask questions, and grow as a staff member.\n\n"
-            "**Here's what you need to know:**\n"
-            "• 💬 Feel free to ask questions in the server channels\n"
-            "• 🎫 Use the ticket system if you need private help\n"
-            "• 📩 You can always DM **TTVRecod** directly\n"
-            "• 📋 Every **Monday at 8:00 AM (GMT+2)** you'll receive an\n"
-            "  automated check-in message — no action needed, just a heads-up!\n\n"
-            "Let's get you trained up! 💪"
+            f"Welcome to **TTVRecod's Mentee Server**.\n\n"
+            "**What you need to know:**\n"
+            "• 💬 Ask questions in the server channels\n"
+            "• 🎫 Use the ticket system for private help\n"
+            "• 📩 DM **TTVRecod** directly if needed\n"
+            "• 📋 Every **Monday at 8:00 AM (GMT+2)** you'll get an automated check-in DM"
         ),
         color=discord.Color.purple(),
         timestamp=discord.utils.utcnow(),
     )
-    embed.set_footer(text="Mutiny DarkRP • Made by a Sa1nt | sa1nt.xyz")
+    embed.set_footer(text="Made by a Sa1nt | sa1nt.xyz")
     if guild_icon_url:
         embed.set_thumbnail(url=guild_icon_url)
     return embed
@@ -96,16 +93,16 @@ def build_welcome_embed(member_name: str = "NewMentee", guild_icon_url: str | No
 
 def build_checkin_embed() -> discord.Embed:
     return discord.Embed(
-        title="📋 Weekly Mentee Check-In",
+        title="📋 Weekly Check-In",
         description=(
-            "Hey! This is an **automated mentee check-in** from **TTVRecod**. 🎮\n\n"
-            "How are things going with your training on **Mutiny DarkRP**?\n\n"
+            "This is an **automated mentee check-in** from **TTVRecod**.\n\n"
+            "How's everything going?\n\n"
             "**Need help?**\n"
-            "• 💬 Head to your private channel in the server\n"
+            "• 💬 Head to your private channel\n"
             "• 🎫 Create a support ticket\n"
             "• 📩 DM <@1162838607220965377> directly\n\n"
             "*Want TTVRecod to check in with you personally instead?\n"
-            "Click the button below to disable these automated messages.*"
+            "Click the button below to disable automated messages.*"
         ),
         color=discord.Color.gold(),
         timestamp=discord.utils.utcnow(),
@@ -132,7 +129,7 @@ def build_mentor_reminder_embed(opted_out_names: list[str] | None = None) -> dis
             value="No one has opted out — automated DMs will go out at 8 AM.",
             inline=False,
         )
-    embed.set_footer(text="Mutiny DarkRP • Made by a Sa1nt | sa1nt.xyz")
+    embed.set_footer(text="Made by a Sa1nt | sa1nt.xyz")
     return embed
 
 
@@ -194,7 +191,7 @@ def build_ticket_opened_embed(user_mention: str = "@SomeMentee") -> discord.Embe
         color=discord.Color.green(),
         timestamp=discord.utils.utcnow(),
     )
-    embed.set_footer(text="Mutiny DarkRP • Made by a Sa1nt | sa1nt.xyz")
+    embed.set_footer(text="Made by a Sa1nt | sa1nt.xyz")
     return embed
 
 
@@ -209,7 +206,7 @@ def build_ticket_2hr_embed(user_name: str = "SomeMentee", channel_id: int = 0) -
 
 def build_ticket_panel_embed() -> discord.Embed:
     embed = discord.Embed(
-        title="🎫 Mutiny DarkRP — Support Tickets",
+        title="🎫 Support Tickets",
         description=(
             "Need help with something? Have a question about your mentorship?\n\n"
             "Click the button below to create a **private support ticket**.\n"
@@ -219,7 +216,7 @@ def build_ticket_panel_embed() -> discord.Embed:
         color=discord.Color.purple(),
         timestamp=discord.utils.utcnow(),
     )
-    embed.set_footer(text="Mutiny DarkRP • Made by a Sa1nt | sa1nt.xyz")
+    embed.set_footer(text="Made by a Sa1nt | sa1nt.xyz")
     return embed
 
 
@@ -727,7 +724,7 @@ async def setup_checkin_cmd(interaction: discord.Interaction):
         color=discord.Color.gold(),
         timestamp=discord.utils.utcnow(),
     )
-    embed.set_footer(text="Mutiny DarkRP • Made by a Sa1nt | sa1nt.xyz")
+    embed.set_footer(text="Made by a Sa1nt | sa1nt.xyz")
 
     await interaction.response.defer(ephemeral=True)
     await interaction.channel.send(embed=embed)
@@ -755,7 +752,7 @@ async def mentees_cmd(interaction: discord.Interaction):
             value=f"ID: `{uid}`\nRole: <@&{info['role_id']}>\nCheck-In: {checkin_status}\n{online}",
             inline=True,
         )
-    embed.set_footer(text="Mutiny DarkRP • Made by a Sa1nt | sa1nt.xyz")
+    embed.set_footer(text="Made by a Sa1nt | sa1nt.xyz")
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 
